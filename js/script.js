@@ -24,7 +24,6 @@ function init() {
             finalizado.value="finalizado";
             finalizado.addEventListener("click", function(){
                 let elemento_lista= this.parentNode.firstChild;
-
                 elemento_lista.style.textDecoration= "line-through";
                 
             });
@@ -40,6 +39,9 @@ function init() {
             });
             element.appendChild(borrar);
             element.appendChild(finalizado);
+
+
+
             if (priority) {
                 this.listTask.unshift({
                     element,
