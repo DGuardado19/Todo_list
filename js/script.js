@@ -16,18 +16,30 @@ function init() {
             // Añadir un boton para marcar de finalizado
             let tarea =document.createElement("p");
             tarea.innerText=task;
-            element.appendChild(p);
-            element.style.display= "flex";
+            element.appendChild(tarea);
+ 
+
             let finalizado= document.createElement("input");
-            finalizado.value="finalizado";
             finalizado.type ="button";
+            finalizado.value="finalizado";
             finalizado.addEventListener("click", function(){
                 let elemento_lista= this.parentNode.firstChild;
+
+                elemento_lista.style.textDecoration= "line-through";
                 
             });
-
+           
             // Elmine de la lista
+            let borrar = document.createElement("input");
+            borrar.type ="button";
+            borrar.value= "ELiminar";
+            borrar.addEventListener("click", function(){
+                let nodox= this.parentNode.parentNode;
+                nodox.removeChild(this.parentNode);
 
+            });
+            element.appendChild(borrar);
+            element.appendChild(finalizado);
             if (priority) {
                 this.listTask.unshift({
                     element,
